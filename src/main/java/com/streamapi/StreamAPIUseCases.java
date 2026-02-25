@@ -1,9 +1,12 @@
 package com.streamapi;
 import java.util.*;
+import java.util.stream.*;
 public class StreamAPIUseCases {
     public static void main(String[] args){
-        List<Integer> n = Arrays.asList(2,4,6,9);
-        System.out.println(n.stream().allMatch(x -> x % 2 == 0));
-        System.out.println(n.stream().anyMatch(x -> x % 2 == 0));
+        System.out.println(
+            Arrays.asList(9,3,7,1,5)
+            .stream().sorted()
+            .collect(Collectors.toList())
+        );
     }
 }
