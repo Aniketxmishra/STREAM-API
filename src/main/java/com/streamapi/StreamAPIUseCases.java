@@ -1,7 +1,12 @@
 package com.streamapi;
 import java.util.*;
+import java.util.stream.*;
 public class StreamAPIUseCases {
     public static void main(String[] args){
-        Arrays.asList(1,2,3,4,5).stream().forEach(System.out::println);
+        System.out.println(
+            Arrays.asList(1,2,3,4,5,6)
+            .stream().filter(n -> n % 2 == 0)
+            .collect(Collectors.toList())
+        );
     }
 }
