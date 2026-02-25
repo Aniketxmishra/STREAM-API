@@ -1,9 +1,13 @@
 package com.streamapi;
 import java.util.*;
+import java.util.stream.*;
 public class StreamAPIUseCases {
     public static void main(String[] args){
-        List<Integer> n = Arrays.asList(5,2,9,1,7);
-        System.out.println(n.stream().min(Integer::compare).get());
-        System.out.println(n.stream().max(Integer::compare).get());
+        IntSummaryStatistics s =
+            Arrays.asList(2,4,6,8)
+            .stream().mapToInt(Integer::intValue)
+            .summaryStatistics();
+        System.out.println(s.getSum());
+        System.out.println(s.getAverage());
     }
 }
